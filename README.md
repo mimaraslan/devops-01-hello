@@ -71,20 +71,136 @@ docker  run       -it     -d           --name my-app4         -p 8084:8080      
 ```
 
 
+http://localhost:8081 </br>
+http://localhost:8082 </br>
+http://localhost:8083 </br>
+http://localhost:8084 </br>
 
-===============  kendi imagelerimizi dockerhub'a gönderme  ======================
 
+### ===============  kendi imagelerimizi dockerhub'a gönderme  ======================
+```
 docker push mimaraslan/devops-01-hello:v001
 docker push mimaraslan/devops-01-hello:v002
 docker push mimaraslan/devops-01-hello:latest
 docker push mimaraslan/devops-01-hello
+```
 
-
-===============  kendi imagelerimizi dockerhub'dan çekme  ======================
-
+### ===============  kendi imagelerimizi dockerhub'dan çekme  ======================
+```
 docker pull mimaraslan/devops-01-hello:v001
 docker pull mimaraslan/devops-01-hello:v002
 docker pull mimaraslan/devops-01-hello:latest
 docker pull mimaraslan/devops-01-hello
+```
+
+
+
+### ============== network ==============
+### networkleri listele
+
+```
+docker network ls
+```
+
+### yeni bir network oluştur
+```
+docker network create my-network
+```
+
+### network tipini değiştirmek istiyorsanız --driver parametresi
+```
+docker network create --driver bridge my-network
+```
+
+
+### network bilgisi ve onu kullanan containerlar
+```
+docker network inspect my-network
+```
+
+
+### networke container ekleme
+```
+docker network connect my-network my-app1
+docker network connect my-network my-app2
+docker network connect my-network my-app3
+```
+
+### network bilgisi ve onu kullanan containerlar
+```
+docker network inspect my-network
+```
+
+### networke container çıkarma
+```
+docker network disconnect my-app2
+```
+
+
+### network bilgisi ve onu kullanan containerlar
+```
+docker network inspect my-network
+```
+
+### networkü silme
+```
+docker network rm my-network
+```
+
+
+### ============== volume ==============
+```
+docker volume ls
+```
+### Yeni bir volume oluşturmak
+```
+docker volume create my-volume
+```
+
+```
+docker volume ls
+```
+
+```
+docker volume inspect my-volume
+```
+
+### bir volume silmek
+```
+docker volume rm my-volume
+```
+
+### kullanılmayan tüm volumeleri silmek
+```
+docker volume prune
+```
+
+### ============= docker-compose ===================
+```
+docker compose -f docker-compose.yml up
+
+docker compose -f docker-compose.yaml up
+```
+
+```
+docker ps
+```
+
+```
+docker container ls
+```
+
+```
+docker-compose logs mongo
+docker-compose logs -f  mongo
+```
+
+
+```
+docker compose -f docker-compose.yml down
+
+docker compose -f docker-compose.yaml down
+```
+
 
 
