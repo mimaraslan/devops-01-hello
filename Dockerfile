@@ -16,9 +16,3 @@ EXPOSE 8080
 
 # uygulamayi Java komutla calistir
 ENTRYPOINT ["java", "-jar", "devops-hello-app.jar"]
-
-
-
-
-
-

@@ -19,5 +19,3 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: 123456
       ME_CONFIG_MONGODB_URL: mongodb://root:123456@mongo:27017/
       ME_CONFIG_BASICAUTH: false
-
-

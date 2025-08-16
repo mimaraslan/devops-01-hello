@@ -3,9 +3,11 @@ version: '3'
 networks:
   elk:
 
+
 volumes:
   elasticsearch:
     driver: local
+
 
 services:
 
