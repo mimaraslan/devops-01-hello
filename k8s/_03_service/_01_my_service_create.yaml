@@ -7,6 +7,7 @@ spec:
   selector:
     app: devops-01-hello
   ports:
-  - port: 8080 # servise yapilacak isteklerin dis portu
-    targetPort: 8080 # bu port kendisine baglanan podlarin portlari olmak zorundadir
-  type: LoadBalancer
+    - port: 8080        # Servis portu
+      targetPort: 8080  # Pod'un iç portu
+      nodePort: 32000   # Dış dünyadan erişim için (30000-32767 arası) olmalı.
+  type: NodePort

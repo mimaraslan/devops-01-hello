@@ -375,6 +375,7 @@ minikube stop
 
 #### 1. Adım:
    yaml dosyalarında tüm portları 8080 yapın.
+   Eğer dışarıdan 9090'da çalışmasını isterseniz o zaman 9090 yapın.
 
 
 #### 2. Adım
@@ -392,10 +393,11 @@ kubectl apply -f   _01_my_service_create.yaml
 
 4. Adım aşağıdaki komutu çalıştırın. Otomatik olarak bir port verilecek ve uygulama K8s üzerinde çalıştırılacak.
 
+minikube service    SERVISE_VERDIGINIZ_AD  
 ```
-minikube service    devops-01-hello     http://localhost:8080
+minikube service    devops-01-hello     
 ```
-minikube service    SERVISE_VERDIGINIZ_AD     http://localhost:8080
+
 
 Buradaki port otomatik verildi ama servis çalıştırılırken o da ayarlanabilir.
 ![DevOps 3- Service Run.png](my-docs/DevOps%203-%20Service%20Run.png)
