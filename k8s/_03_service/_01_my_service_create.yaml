@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app: devops-01-hello
-  type: LoadBalancer   
   ports:
-  - port: 9090 # servise yapilacak isteklerin dis portu
+  - port: 8080 # servise yapilacak isteklerin dis portu
     targetPort: 8080 # bu port kendisine baglanan podlarin portlari olmak zorundadir
+  type: LoadBalancer

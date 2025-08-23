@@ -209,6 +209,29 @@ docker compose -f docker-compose.yaml down
 ### ============== Kubernetes K8s ===========
 
 
+https://kubernetes.io/docs/concepts/overview/components/
+
+https://minikube.sigs.k8s.io/docs/start/
+
+Windows için minikube kurulum komudu
+```
+winget install Kubernetes.minikube
+```
+
+MacOS için minikube kurulum komutu
+```
+brew install minikube
+```
+
+== Yeni bir terminal aç ve işin bitinceye kadar onu açık tut ===
+```
+minikube start
+```
+== Yeni bir terminal aç ve işin bitinceye kadar onu açık tut ===
+```
+minikube dashboard
+```
+
 ```
 docker pull   mimaraslan/devops-01-hello:latest
 ```
@@ -221,6 +244,13 @@ docker  run     --name my-app1     -p 8081:8080    -it   -d       mimaraslan/dev
 ```
 kubectl version
 ```
+
+
+
+
+
+
+
 
 ```
 kubectl run    my-pod1    --image=mimaraslan/devops-01-hello:latest
@@ -329,9 +359,45 @@ kubectl get svc  -o wide
 
 ```
 
+== İşin bitinceye minikube'ü durur ve terminali kapat. ===
+```
+minikube stop
+```
+
 ![DevOps 1 - Docker.png](my-docs/DevOps%201%20-%20Docker.png)
 
 ![DevOps 2 - Docker.png](my-docs/DevOps%202%20-%20Docker.png)
 
 
 
+
+### Ödevinizin cevabı
+
+#### 1. Adım:
+   yaml dosyalarında tüm portları 8080 yapın.
+
+
+#### 2. Adım
+   Deployment dosyasını çalıştırın.
+```
+kubectl apply -f   _01_my_deployment_create.yaml
+```
+
+
+#### 3. Adım
+   Service dosyasını çalıştırın.
+```
+kubectl apply -f   _01_my_service_create.yaml
+```
+
+4. Adım aşağıdaki komutu çalıştırın. Otomatik olarak bir port verilecek ve uygulama K8s üzerinde çalıştırılacak.
+
+```
+minikube service    devops-01-hello     http://localhost:8080
+```
+minikube service    SERVISE_VERDIGINIZ_AD     http://localhost:8080
+
+Buradaki port otomatik verildi ama servis çalıştırılırken o da ayarlanabilir.
+![DevOps 3- Service Run.png](my-docs/DevOps%203-%20Service%20Run.png)
+
+![DevOps 4- App Work.png](my-docs/DevOps%204-%20App%20Work.png)
