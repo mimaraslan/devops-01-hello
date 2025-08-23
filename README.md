@@ -329,7 +329,9 @@ kubectl get svc  -o wide
 
 ```
 
+![DevOps 1 - Docker.png](my-docs/DevOps%201%20-%20Docker.png)
 
+![DevOps 2 - Docker.png](my-docs/DevOps%202%20-%20Docker.png)
 
 
 
