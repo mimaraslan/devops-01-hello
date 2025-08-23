@@ -369,9 +369,7 @@ minikube stop
 ![DevOps 2 - Docker.png](my-docs/DevOps%202%20-%20Docker.png)
 
 
-kubectl apply -f deployment-service.yaml
-kubectl port-forward service/devops-01-hello 9090:9090
-
+<hr>
 
 ### Ödevinizin cevabı
 
