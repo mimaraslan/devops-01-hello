@@ -369,6 +369,8 @@ minikube stop
 ![DevOps 2 - Docker.png](my-docs/DevOps%202%20-%20Docker.png)
 
 
+kubectl apply -f deployment-service.yaml
+kubectl port-forward service/devops-01-hello 9090:9090
 
 
 ### Ödevinizin cevabı
@@ -398,7 +400,38 @@ minikube service    devops-01-hello
 ```
 
 
-Buradaki port otomatik verildi ama servis çalıştırılırken o da ayarlanabilir.
+Buradaki port otomatik verildi.
 ![DevOps 3- Service Run.png](my-docs/DevOps%203-%20Service%20Run.png)
 
 ![DevOps 4- App Work.png](my-docs/DevOps%204-%20App%20Work.png)
+
+<hr>
+
+İlle de 9090'dan çalıştırmak için service dosyasında dış port ile type kısmını değiştireceğiz.
+
+1. Adım:
+
+![DevOps 5 - localhost 9090.png](my-docs/DevOps%205%20-%20localhost%209090.png)
+
+
+#### 2. Adım
+Deployment dosyasını yeniden çalıştırın.
+```
+kubectl apply -f   _01_my_deployment_create.yaml
+```
+
+
+#### 3. Adım
+Service dosyasını yeniden çalıştırın.
+```
+kubectl apply -f   _01_my_service_create.yaml
+```
+
+
+4. Adım aşağıdaki komutu çalıştırın. Localde port artık  9090 olacak.
+
+```
+kubectl port-forward service/devops-01-hello 9090:9090 
+```
+
+![DevOps 6 - App Work 9090.png](my-docs/DevOps%206%20-%20App%20Work%209090.png)
