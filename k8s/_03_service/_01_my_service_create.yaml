@@ -9,4 +9,4 @@ spec:
   type: LoadBalancer   
   ports:
   - port: 9090 # servise yapilacak isteklerin dis portu
-    targetPort: 8080 # bu port kendisine baglanan podlarin portlari olmak zorindadir
+    targetPort: 8080 # bu port kendisine baglanan podlarin portlari olmak zorundadir
