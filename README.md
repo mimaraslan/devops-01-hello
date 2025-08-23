@@ -375,7 +375,6 @@ minikube stop
 
 #### 1. Adım:
    yaml dosyalarında tüm portları 8080 yapın.
-   Eğer dışarıdan 9090'da çalışmasını isterseniz o zaman 9090 yapın.
 
 
 #### 2. Adım
