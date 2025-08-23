@@ -204,3 +204,130 @@ docker compose -f docker-compose.yaml down
 
 
 
+
+
+### ============== Kubernetes K8s ===========
+
+
+```
+docker pull   mimaraslan/devops-01-hello:latest
+```
+
+```
+docker  run     --name my-app1     -p 8081:8080    -it   -d       mimaraslan/devops-01-hello:latest
+```
+
+
+```
+kubectl version
+```
+
+```
+kubectl run    my-pod1    --image=mimaraslan/devops-01-hello:latest
+kubectl run    my-pod2    --image=mimaraslan/devops-01-hello:v002
+kubectl run    my-pod3    --image=mimaraslan/devops-01-hello:v003
+
+kubectl get pods
+
+
+kubectl run    my-pod4    --image=mimaraslan/devops-01-hello:v004
+
+kubectl get pods
+
+
+kubectl delete -n default pod my-pod4
+
+kubectl get pods
+
+
+
+kubectl run    my-pod4    --image=mimaraslan/devops-01-hello:v004
+
+kubectl get pods
+
+
+
+kubectl run    my-pod5    --image=mimaraslan/devops-01-hello:v001
+kubectl run    my-pod6    --image=mimaraslan/devops-01-hello:v002
+kubectl run    my-pod7    --image=mimaraslan/devops-01-hello:v003
+
+
+
+
+
+kubectl run    my-pod8    --image=mysql
+
+kubectl delete pod my-pod8
+
+kubectl get pods
+
+
+kubectl get pods   
+kubectl get pod
+kubectl get po
+
+kubectl get pods   -o wide
+kubectl get pod   -o wide
+kubectl get po   -o wide
+
+
+
+
+kubectl get nodes   
+kubectl get node
+kubectl get no
+
+kubectl get nodes   -o wide
+kubectl get node   -o wide
+kubectl get no   -o wide
+```
+
+===   pod ===
+```
+
+kubectl apply -f    _01_my_pod_create.yaml
+
+kubectl get pods  -o wide
+
+kubectl delete pod    devops-01-hello
+
+kubectl get pods
+
+```
+
+===   deployment ===
+
+
+```
+kubectl apply -f   _01_my_deployment_create.yaml
+
+kubectl delete deployment devops-01-hello
+
+
+kubectl get deployment
+
+kubectl get deploy
+
+kubectl get deployment  -o wide
+
+kubectl get deploy  -o wide
+```
+
+===   service  ===
+```
+
+kubectl apply -f   _01_my_service_create.yaml
+
+kubectl delete service devops-01-hello
+
+
+kubectl get services  -o wide
+
+kubectl get service  -o wide
+
+kubectl get svc  -o wide
+
+```
+
+
+
